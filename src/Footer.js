@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="Footer">
       <a
-        href="https://github.com/Meerduke/weather-app"
+        href="https://github.com/Meerduke/weather-app-react"
         className="open-source-link"
         target="_blank"
         rel="noreferrer"
