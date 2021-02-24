@@ -1,0 +1,32 @@
+.Temperature .units {
+  font-size: 30px;
+  position: relative;
+  top: -90px;
+  right: 65px;
+  text-align: right;
+  font-size: 35px;
+  margin-bottom: 0;
+  text-decoration: none;
+  transition: 150ms ease-in-out all;
+  cursor: default;
+}
+
+.Temperature .celsius {
+  text-decoration: none;
+  color: #008891;
+  cursor: default;
+}
+
+.Temperature .celsius:hover {
+  color: #0f3057;
+}
+
+.Temperature .fahrenheit {
+  text-decoration: none;
+  color: #008891;
+  cursor: default;
+}
+
+.Temperature .fahrenheit:hover {
+  color: #0f3057;
+}

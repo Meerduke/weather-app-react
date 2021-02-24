@@ -1,0 +1,8 @@
+.Footer {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  color: grey;
+}
+.Footer .open-source-link {
+  text-decoration: none;
+}

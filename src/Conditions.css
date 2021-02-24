@@ -1,0 +1,28 @@
+.Conditions ul {
+  list-style: none;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+}
+
+.Conditions hr {
+  width: 100%;
+  height: 2px;
+  position: relative;
+  top: -30px;
+}
+
+.Conditions .icon-date {
+  top: -15px;
+  right: -190px;
+}
+
+.Conditions .weather-conditions {
+  top: -90px;
+  left: -170px;
+  text-align: center;
+}
+
+.Conditions .description {
+  text-transform: capitalize;
+}

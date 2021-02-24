@@ -1,16 +1,23 @@
-import './App.css';
-import Weather from "./Weather";
+import React from "react";
+import City from "./City";
+import Temperature from "./Temperature";
+import Conditions from "./Conditions";
+import Form from "./Form";
+import Footer from "./Footer";
 
-function App() {
+import "./App.css";
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Hello World
-        <Weather city="London" />
-        <Weather city="Milan" />
-      </header>
+      <div class="container">
+        <h1>Weather Forecast</h1>
+        <City />
+        <Temperature />
+        <Conditions />
+        <Form />
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;
