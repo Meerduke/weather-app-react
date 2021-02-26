@@ -11,8 +11,7 @@ export default function Footer() {
         rel="noreferrer"
       >
         Open source code
-      </a>
-      by Becca Murdoch
+      </a> by Becca Murdoch
     </footer>
   );
 }
