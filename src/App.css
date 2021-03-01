@@ -9,18 +9,3 @@
   display: block;
   margin: 50px auto 50px auto;
 }
-
-.App h1 {
-  font-family: "Bebas Neue", cursive;
-  color: #0f3057;
-  font-size: 48px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-.App hr {
-  margin: 30px 10px 40px 10px;
-  color: #0f3057;
-  height: 2px;
-  width: 100%;
-}
