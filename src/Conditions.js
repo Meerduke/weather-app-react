@@ -11,13 +11,9 @@ export default function Conditions() {
   };
 
   return (
-    <div className="Conditions">
-      <ul className="icon-date">
-        <li>{weatherData.icon}</li>
-        <li className="current-date-time">{weatherData.date}</li>
-      </ul>
+    <div className="row Conditions">
 
-      <ul className="weather-conditions">
+      <ul className="col-6">
         <li className="description">{weatherData.conditions}</li>
         <li>
           Humidity:
@@ -26,7 +22,11 @@ export default function Conditions() {
         </li>
       </ul>
 
-      <hr />
+      <ul className="col-6">
+        <li className="current-icon">{weatherData.icon}</li>
+        <li className="current-date-time">{weatherData.date}</li>
+      </ul>
+
     </div>
   );
 }

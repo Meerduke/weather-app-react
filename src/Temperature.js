@@ -12,20 +12,19 @@ export default function Temperature() {
   }
   return (
     <div className="row Temperature">
-      <span className="units">
+      <span>
         <span>
           {temperature.celsius}
-          <a className="celsius" href="/" onClick={handleSubmit}>
+        </span>
+          <span className="units">
+           {""} <a className="celsius" href="/" onClick={handleSubmit}>
             °C
           </a>
-        </span>
-        <span> | </span>
-        <span>
-          {temperature.fahrenheit}
+          {""} | {""}
           <a className="fahrenheit" href="/" onClick={handleSubmit}>
             °F
           </a>
-        </span>
+        </span>  
       </span>
     </div>
   );

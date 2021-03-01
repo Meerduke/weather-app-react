@@ -1,7 +1,7 @@
-.Temperature .units {
+.Temperature {
   font-size: 30px;
   position: relative;
-  top: -90px;
+  top: -70px;
   right: -500px;
   text-align: right;
   font-size: 35px;
@@ -11,10 +11,20 @@
   cursor: default;
 }
 
+.Temperature .units {
+  text-decoration: none;
+  color: #008891;
+  cursor: default;
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+}
+
 .Temperature .celsius {
   text-decoration: none;
   color: #008891;
   cursor: default;
+  font-size: 18px;
 }
 
 .Temperature .celsius:hover {
@@ -25,6 +35,7 @@
   text-decoration: none;
   color: #008891;
   cursor: default;
+  font-size: 18px;
 }
 
 .Temperature .fahrenheit:hover {

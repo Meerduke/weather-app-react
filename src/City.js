@@ -6,7 +6,7 @@ export default function City() {
 
   return (
     <div className="City">
-      <h2>Current weather in {currentCity}</h2>;
+      <h2>Current weather in {currentCity}</h2>
     </div>
   );
 }
