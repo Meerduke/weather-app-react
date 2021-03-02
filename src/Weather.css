@@ -91,13 +91,18 @@
   top: -10px;
 }
 
-.Weather .icon-date {
+.Weather .description {
   position: relative;
-  top: -70px;
+  top: -10px;
 }
 
-.Weather .icon-date img {
-  width: 90px;
+.Weather .icon-date {
+  position: relative;
+  top: -75px;
+}
+
+.Weather .icon {
+  font-size: 60px;
 }
 
 .Weather .Forecast {
