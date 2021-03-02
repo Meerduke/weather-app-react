@@ -32,6 +32,16 @@
   margin: 10px 0 20px 0;
 }
 
+.Weather Footer {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  color: grey;
+}
+
+.Weather Footer .open-source-link {
+  text-decoration: none;
+}
+
 .Weather .Temperature {
   font-size: 30px;
   position: relative;

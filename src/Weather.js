@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherConditions from "./WeatherConditions";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
+
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -10,12 +14,11 @@ export default function Weather(props) {
   }
   
   function showWeather(response){
-    console.log(response);
     setWeather({
       ready: true,
       temperature: response.data.main.temp,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`,
-      date: "Tuesday 16 February 15:12",
+      date: new Date(response.data.dt*1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -32,89 +35,12 @@ if (weather.ready) {
 
       <h2>Current weather in {weather.city}</h2>
 
-      <div className="row Temperature">
-      <span>
-        <span>
-          {Math.round(weather.temperature)}
-        </span>
-          <span className="units">
-           {""} <a className="celsius" href="/" onClick={handleSubmit}>
-            °C
-          </a>
-          {""} | {""}
-          <a className="fahrenheit" href="/" onClick={handleSubmit}>
-            °F
-          </a>
-        </span>  
-      </span>
-    </div>
+    <WeatherConditions data={weather}/>
+    <Forecast />
 
-    <div className="row Conditions">
-      <ul className="col-6 Description">
-        <li className="text-capitalize description">{weather.description}</li>
-        <li>
-          Humidity:
-          {weather.humidity}% Wind:
-          {Math.round(weather.wind)} Km/H
-        </li>
-      </ul>
-      <ul className="col-6 icon-date">
-        <li><img src={weather.icon} alt={weather.description} /></li>
-        <li className="current-date-time">{weather.date}</li>
-      </ul>
-    </div>
+    <hr />
 
-    <div className="row Forecast">
-                <div className="col-md-auto">
-                    Monday
-                    <br />
-                    <i className="far fa-snowflake"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Tuesday
-                    <br />
-                    <i className="far fa-snowflake"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Wednesday
-                    <br />
-                    <i className="fas fa-cloud-sun"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Thursday
-                    <br />
-                    <i className="fas fa-cloud"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Friday
-                    <br />
-                    <i className="fas fa-cloud-rain"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-            </div>
-
-            <hr />
-
-            <form className="Form">
+    <form className="Form">
               <div className="row change-location">
                 <div className="col-auto">
                   <label for="change-city" className="col-form-label">
@@ -131,7 +57,7 @@ if (weather.ready) {
                   />
                 </div>
                 <div className="col-auto search-button">
-                  <input
+                  <input onSubmit={handleSubmit}
                     type="submit"
                     className="btn btn-info w-100"
                     value="Search"
@@ -145,8 +71,11 @@ if (weather.ready) {
                   />
                 </div>
              </div>
-          </form>
-    </div>
+    </form>
+
+    <Footer />  
+
+  </div>
   );
 } else {
   let apiKey = `aae79086babd8e5274d8186968279eae`;
@@ -156,4 +85,5 @@ if (weather.ready) {
   <p>Loading...</p>
    );
  }
+ 
 }
