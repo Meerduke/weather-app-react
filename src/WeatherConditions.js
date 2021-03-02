@@ -8,7 +8,7 @@ export default function WeatherConditions(props){
   }
 
     return (
-    <div className="WeatherConditions">    
+    <div className="WeatherConditions">
     <div className="row Temperature">
       <span>
         <span>
