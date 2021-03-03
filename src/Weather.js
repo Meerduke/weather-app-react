@@ -39,6 +39,25 @@ function handleCitySearch(event){
   setCity(event.target.value);
 }  
 
+function showCity(response) {
+  console.log(response.data.list[0].name);
+  search(response.data.list[0].name);
+}
+
+function showPosition (position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = `aae79086babd8e5274d8186968279eae`;
+  let cityCount = 1;
+  let currentCityUrl = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=${cityCount}&appid=${apiKey}&units=metric`;
+  axios.get(currentCityUrl).then(showCity);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 if (weather.ready) {
   return(
   <div className="Weather">
@@ -81,6 +100,7 @@ if (weather.ready) {
                     type="submit"
                     className="btn btn-info w-100"
                     value="Current Location"
+                    onClick={getCurrentLocation}
                   />
                 </div>
              </div>
