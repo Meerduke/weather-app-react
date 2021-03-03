@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import "./Weather.css";
 
 export default function Weather(props) {
+  const apiKey =`aae79086babd8e5274d8186968279eae`;
   const [weather,setWeather] = useState({ ready: false });
   const [city, setCity] = useState(props.city);
   
@@ -25,7 +26,6 @@ export default function Weather(props) {
 }
 
 function search(){
-  let apiKey = `aae79086babd8e5274d8186968279eae`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showWeather);
 }
@@ -39,23 +39,17 @@ function handleCitySearch(event){
   setCity(event.target.value);
 }  
 
-function showCity(response) {
-  console.log(response.data.list[0].name);
-  search(response.data.list[0].name);
-}
 
 function showPosition (position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiKey = `aae79086babd8e5274d8186968279eae`;
-  let cityCount = 1;
-  let currentCityUrl = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=${cityCount}&appid=${apiKey}&units=metric`;
-  axios.get(currentCityUrl).then(showCity);
+  let currentCityUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(currentCityUrl).then(showWeather);
 }
 
 function getCurrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
+  navigator.geolocation.getCurrentPosition(showPosition)
 }
 
 if (weather.ready) {
