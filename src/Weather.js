@@ -62,7 +62,7 @@ if (weather.ready) {
 
     <WeatherConditions data={weather}/>
     <Forecast />
-
+    
     <hr />
 
     <form className="Form" onSubmit={handleSubmit}>

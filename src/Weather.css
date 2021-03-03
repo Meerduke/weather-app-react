@@ -26,10 +26,9 @@
 }
 
 .Weather hr {
-  color: #008891;
-  height: 2px;
-  width: 100%;
-  margin: 10px 0 20px 0;
+  position: relative;
+  top: -20px;
+  width: 600px;
 }
 
 .Weather Footer {
@@ -42,17 +41,12 @@
   text-decoration: none;
 }
 
-.Weather .active {
-  color: #0f3057;
-}
-
 .Weather .Temperature {
-  font-size: 30px;
   position: relative;
   top: -70px;
   right: -500px;
   text-align: right;
-  font-size: 35px;
+  font-size: 40px;
   margin-bottom: 0;
   text-decoration: none;
   transition: 150ms ease-in-out all;
@@ -65,29 +59,17 @@
   cursor: default;
   font-size: 18px;
   position: relative;
-  top: -10px;
-}
-
-.Weather .Temperature .celsius {
-  text-decoration: none;
-  color: #008891;
-  cursor: default;
-  font-size: 18px;
+  top: -15px;
 }
 
 .Weather .Temperature .celsius:hover {
   color: #0f3057;
-}
-
-.Weather .Temperature .fahrenheit {
   text-decoration: none;
-  color: #008891;
-  cursor: default;
-  font-size: 18px;
 }
 
 .Weather .Temperature .fahrenheit:hover {
   color: #0f3057;
+  text-decoration: none;
 }
 
 .Weather .Description {
