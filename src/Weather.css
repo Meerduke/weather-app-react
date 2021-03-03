@@ -44,7 +44,7 @@
 .Weather .Temperature {
   position: relative;
   top: -70px;
-  right: -500px;
+  right: -550px;
   text-align: right;
   font-size: 40px;
   margin-bottom: 0;
@@ -65,11 +65,13 @@
 .Weather .Temperature .celsius:hover {
   color: #0f3057;
   text-decoration: none;
+  cursor: default;
 }
 
 .Weather .Temperature .fahrenheit:hover {
   color: #0f3057;
   text-decoration: none;
+  cursor: default;
 }
 
 .Weather .Description {
