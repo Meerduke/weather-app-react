@@ -55,6 +55,10 @@
   cursor: default;
 }
 
+.Weather .Temperature .active {
+  color: #0f3057;
+}
+
 .Weather .Temperature .units {
   text-decoration: none;
   color: #008891;
