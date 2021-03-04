@@ -4,7 +4,6 @@ import WeatherIcons from "./WeatherIcons";
 export default function ForecastPreview(props){
 
   function hours(){
-      console.log(new Date(props.data.dt*1000));
       let date = new Date(props.data.dt*1000);
       let hours = date.getHours();
         if (hours < 10){

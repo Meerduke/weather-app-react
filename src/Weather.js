@@ -12,11 +12,12 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.city);
   
   function showWeather(response){
+    console.log(response.data);
     setWeather({
       ready: true,
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt*1000),
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
