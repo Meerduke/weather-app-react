@@ -1,53 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import ForecastPreview from "./ForecastPreview";
 
-export default function Forecast(){
-return(
-<div className="row Forecast">
-                <div className="col-md-auto">
-                    Monday
-                    <br />
-                    <i className="far fa-snowflake"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Tuesday
-                    <br />
-                    <i className="far fa-snowflake"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Wednesday
-                    <br />
-                    <i className="fas fa-cloud-sun"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Thursday
-                    <br />
-                    <i className="fas fa-cloud"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-                <div className="col-md-auto">
-                    Friday
-                    <br />
-                    <i className="fas fa-cloud-rain"></i>
-                    <br />
-                    <span>
-                        4°C | -2°C
-                    </span>
-                </div>
-            </div>
+import "./Forecast.css";
+
+
+export default function Forecast(props){
+ const [loaded, setLoaded]= useState(false);
+ const [forecast, setForecast] =useState(null);   
+
+function showForecast(response){
+    setForecast(response.data);
+    setLoaded(true);
+}
+
+ if(loaded && props.city === forecast.city.name){
+    return(
+        <div className="Forecast row">
+            {forecast.list.slice(0, 5).map(function (forecastItem) {
+                return <ForecastPreview data={forecastItem}/>;
+            })}
+        </div>
 );
+}else{
+    let apiKey =`aae79086babd8e5274d8186968279eae`;
+    let url = `https:api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showForecast);
+    
+    return null;
+}
 }

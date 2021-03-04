@@ -1,0 +1,16 @@
+.Forecast {
+  position: relative;
+  top: -50px;
+  border: 1px solid rgba(0, 88, 122, 1);
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  background: rgba(0, 88, 122, 0.4);
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.Forecast canvas {
+  margin: 15px 0;
+  height: 50px;
+}

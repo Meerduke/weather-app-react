@@ -61,7 +61,7 @@ if (weather.ready) {
       <h2>Current weather in {weather.city}</h2>
 
     <WeatherConditions data={weather}/>
-    <Forecast />
+    <Forecast city={weather.city}/>
     
     <hr />
 
