@@ -12,7 +12,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.city);
   
   function showWeather(response){
-    console.log(response.data);
     setWeather({
       ready: true,
       temperature: response.data.main.temp,
@@ -21,7 +20,9 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      city: response.data.name
+      city: response.data.name,
+      lat: response.data.coord.lat,
+      lon:response.data.coord.lon
   } 
   );
 }
@@ -62,7 +63,7 @@ if (weather.ready) {
       <h2>Current weather in {weather.city}</h2>
 
     <WeatherConditions data={weather}/>
-    <Forecast city={weather.city}/>
+    <Forecast lat={weather.lat} lon={weather.lon}/>
     
     <hr />
 
