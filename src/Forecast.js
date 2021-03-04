@@ -17,9 +17,12 @@ function showForecast(response){
  if(loaded && props.city === forecast.city.name){
     return(
         <div className="Forecast row">
-            {forecast.list.slice(0, 5).map(function (forecastItem) {
-                return <ForecastPreview data={forecastItem}/>;
-            })}
+            <ForecastPreview data={forecast.list[0]}/>
+            <ForecastPreview data={forecast.list[1]}/>
+            <ForecastPreview data={forecast.list[2]}/>
+            <ForecastPreview data={forecast.list[3]}/>
+            <ForecastPreview data={forecast.list[4]}/>
+            
         </div>
 );
 }else{
