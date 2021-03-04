@@ -17,17 +17,14 @@ function showForecast(response){
  if(loaded && props.city === forecast.city.name){
     return(
         <div className="Forecast row">
-            <ForecastPreview data={forecast.list[0]}/>
-            <ForecastPreview data={forecast.list[1]}/>
-            <ForecastPreview data={forecast.list[2]}/>
-            <ForecastPreview data={forecast.list[3]}/>
-            <ForecastPreview data={forecast.list[4]}/>
-            
+            {forecast.list.slice(0, 5).map(function (forecastItem) {
+                return <ForecastPreview data={forecastItem}/>;
+            })} 
         </div>
 );
 }else{
     let apiKey =`aae79086babd8e5274d8186968279eae`;
-    let url = `https:api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showForecast);
     
     return null;
