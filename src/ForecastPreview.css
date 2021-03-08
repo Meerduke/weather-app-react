@@ -1,0 +1,11 @@
+.ForecastPreview .celsius:hover {
+  color: #0f3057;
+  text-decoration: none;
+  cursor: default;
+}
+
+.ForecastPreview .fahrenheit:hover {
+  color: #0f3057;
+  text-decoration: none;
+  cursor: default;
+}
