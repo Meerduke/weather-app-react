@@ -29,7 +29,7 @@
   position: relative;
   top: -20px;
   width: 600px;
-  color: red !important;
+  border-color: #008891;
 }
 
 .Weather Footer {

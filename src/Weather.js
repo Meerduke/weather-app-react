@@ -3,6 +3,7 @@ import axios from "axios";
 import WeatherConditions from "./WeatherConditions";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
+import Loader from "react-loader-spinner";
 
 import "./Weather.css";
 
@@ -109,7 +110,13 @@ if (weather.ready) {
 } else {
   search();
   return (
-  <p>Loading...</p>
+  <Loader
+        type="Rings"
+        color="#008891"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
    );
  }
 }
